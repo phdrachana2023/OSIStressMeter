@@ -1,2 +1,2 @@
 # StressOmeter
-OSI based stress detection
+OSI based stress analysis and detection
