@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OSI — Advanced Assessment</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4ff}
+.topbar{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.brand{font-size:1em;font-weight:800}
+.topbar a{color:#93c5fd;text-decoration:none;font-size:.84em;font-weight:600}
+.wrap{max-width:860px;margin:0 auto;padding:18px 12px 60px}
+.card{background:#fff;border-radius:14px;padding:22px 26px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.hdr{font-size:1.4em;font-weight:800;color:#0f172a;margin-bottom:3px}
+.sub{color:#64748b;font-size:.87em}
+.sec{font-size:.97em;font-weight:700;color:#0f172a;border-left:4px solid #3b82f6;padding-left:10px;margin:0 0 14px}
+.flbl{font-weight:600;font-size:.82em;color:#374151;display:block;margin:12px 0 4px}
+input[type=text]{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:.88em;outline:none;font-family:inherit}
+input[type=text]:focus{border-color:#3b82f6}
+.rgrp{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.rgrp label{display:flex;align-items:center;gap:5px;padding:5px 11px;border:1.5px solid #e2e8f0;border-radius:8px;cursor:pointer;font-size:.82em;transition:all .15s}
+.rgrp label:hover{border-color:#3b82f6;background:#eff6ff}
+.rgrp input[type=radio]{accent-color:#3b82f6}
+.qb{background:#f8fafc;border-radius:10px;padding:9px 12px;margin-bottom:8px;display:flex;gap:8px;align-items:flex-start}
+.qn{font-weight:700;color:#3b82f6;min-width:30px;font-size:.84em;padding-top:2px;flex-shrink:0}
+.qbody{flex:1}
+.qt{color:#334155;font-size:.85em;line-height:1.5;margin-bottom:6px}
+.qi-row{display:flex;align-items:center;gap:8px}
+.qi{width:62px;padding:5px 8px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:.92em;text-align:center;outline:none;font-family:inherit}
+.qi:focus{border-color:#3b82f6}
+.qhint{font-size:.73em;color:#94a3b8}
+.btn{background:linear-gradient(135deg,#7c3aed,#4338ca);color:#fff;border:none;padding:13px 38px;border-radius:10px;font-size:.97em;font-weight:700;cursor:pointer;display:block;margin:0 auto;font-family:inherit}
+.btn:hover{opacity:.88}
+.err{color:#dc2626;font-size:.83em;margin-top:9px;text-align:center;display:none;padding:8px 12px;background:#fef2f2;border-radius:8px}
+.sav{color:#16a34a;font-size:.83em;margin-top:9px;text-align:center;display:none;padding:8px 12px;background:#f0fdf4;border-radius:8px}
+</style></head><body>
+<div class="topbar">
+  <div class="brand">🧠 OSI — Advanced Assessment</div>
+  <a href="/home">← Home</a>
+</div>
+<div class="wrap">
+
+<div class="card">
+  <div class="hdr">Advanced OSI Assessment</div>
+  <div class="sub">Occupational Stress Index · Srivastava &amp; Singh (1981) · 46 Questions + Demographics</div>
+</div>
+
+<div class="card">
+  <div class="sec">Section A — Demographic Details</div>
+  <label class="flbl">Full Name *</label><input type="text" name="d_name" placeholder="Your full name">
+  <label class="flbl">Email ID *</label><input type="text" name="d_email" placeholder="Email address">
+  <label class="flbl">Contact Number *</label><input type="text" name="d_contact" placeholder="Contact number">
+  <label class="flbl">Institute, Department and University *</label><input type="text" name="d_inst" placeholder="e.g. Dept of CS, ABC University">
+  <label class="flbl">Teaching Level *</label>
+  <div class="rgrp"><label><input type="radio" name="teach" value="UG"> UG (Under Graduate)</label><label><input type="radio" name="teach" value="PG"> PG (Post Graduate)</label></div>
+  <label class="flbl">Gender *</label>
+  <div class="rgrp"><label><input type="radio" name="gender" value="Male"> Male</label><label><input type="radio" name="gender" value="Female"> Female</label></div>
+  <label class="flbl">Marital Status *</label>
+  <div class="rgrp"><label><input type="radio" name="marital" value="Married"> Married</label><label><input type="radio" name="marital" value="Unmarried"> Unmarried</label></div>
+  <label class="flbl">Age Group *</label>
+  <div class="rgrp"><label><input type="radio" name="age" value="24-34"> 24–34</label><label><input type="radio" name="age" value="35-44"> 35–44</label><label><input type="radio" name="age" value="45-60 and above"> 45–60 and above</label></div>
+  <label class="flbl">Education Qualification *</label>
+  <div class="rgrp"><label><input type="radio" name="edu" value="Graduate"> Graduate</label><label><input type="radio" name="edu" value="Post-Graduate"> Post-Graduate</label><label><input type="radio" name="edu" value="MPhil"> MPhil</label><label><input type="radio" name="edu" value="PhD"> PhD</label><label><input type="radio" name="edu" value="Others"> Others</label></div>
+  <label class="flbl">Designation *</label>
+  <div class="rgrp"><label><input type="radio" name="desig" value="Director/Principal"> Director/Principal</label><label><input type="radio" name="desig" value="Dean"> Dean</label><label><input type="radio" name="desig" value="Professor"> Professor</label><label><input type="radio" name="desig" value="Associate Professor"> Associate Professor</label><label><input type="radio" name="desig" value="Assistant Professor"> Assistant Professor</label></div>
+  <label class="flbl">Type of Employment *</label>
+  <div class="rgrp"><label><input type="radio" name="emp" value="Regular"> Regular</label><label><input type="radio" name="emp" value="Contractual"> Contractual</label></div>
+  <label class="flbl">Total Experience (inclusive of Industrial experience) *</label>
+  <div class="rgrp"><label><input type="radio" name="exp" value="1-5 years"> 1–5 yrs</label><label><input type="radio" name="exp" value="6-10 years"> 6–10 yrs</label><label><input type="radio" name="exp" value="11-15 years"> 11–15 yrs</label><label><input type="radio" name="exp" value="16-20 years"> 16–20 yrs</label><label><input type="radio" name="exp" value="21-25 years"> 21–25 yrs</label><label><input type="radio" name="exp" value="More than 25 years"> 25+ yrs</label></div>
+  <label class="flbl">Tenure in Current Organization *</label>
+  <div class="rgrp"><label><input type="radio" name="tenure" value="Less than one year"> &lt;1 yr</label><label><input type="radio" name="tenure" value="1-5 years"> 1–5 yrs</label><label><input type="radio" name="tenure" value="6-10 years"> 6–10 yrs</label><label><input type="radio" name="tenure" value="More than 10 years"> 10+ yrs</label></div>
+</div>
+
+<div class="card">
+  <div class="sec">Section B — OSI Questionnaire (46 Questions)</div>
+  <p style="font-size:.82em;color:#64748b;margin-bottom:14px;line-height:1.85">
+    Enter a number from <strong>1 to 5</strong> for each statement:<br>
+    <strong>1</strong> = Strongly Disagree &nbsp;|&nbsp; <strong>2</strong> = Do Not Agree &nbsp;|&nbsp; <strong>3</strong> = Not Sure &nbsp;|&nbsp; <strong>4</strong> = Agree &nbsp;|&nbsp; <strong>5</strong> = Strongly Agree<br>
+    <span style="color:#d97706">⚠ False-keyed questions are automatically reverse-scored by the system.</span>
+  </p>
+  <div class="qb"><div class="qn">Q1.</div><div class="qbody"><div class="qt">I often have too much work to complete in the time available to me.</div><div class="qi-row"><input type="number" name="q1" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q2.</div><div class="qbody"><div class="qt">I frequently feel unclear or confused about what is really expected of me in my job.</div><div class="qi-row"><input type="number" name="q2" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q3.</div><div class="qbody"><div class="qt">I get conflicting instructions or demands from different people at work.</div><div class="qi-row"><input type="number" name="q3" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q4.</div><div class="qbody"><div class="qt">Workplace politics, favouritism, or unnecessary group pressures make my job harder.</div><div class="qi-row"><input type="number" name="q4" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q5.</div><div class="qbody"><div class="qt">I carry a lot of worry or responsibility for the safety, well-being, or success of others.</div><div class="qi-row"><input type="number" name="q5" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q6.</div><div class="qbody"><div class="qt">My ideas, opinions, or inputs are rarely asked for or taken seriously in important decisions.</div><div class="qi-row"><input type="number" name="q6" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q7.</div><div class="qbody"><div class="qt">I feel I have very little control or authority over things that directly affect my job.</div><div class="qi-row"><input type="number" name="q7" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q8.</div><div class="qbody"><div class="qt">My relationships with colleagues or teammates feel unsupportive, tense, or difficult.</div><div class="qi-row"><input type="number" name="q8" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q9.</div><div class="qbody"><div class="qt">My job does not give me enough chances to learn new things, be creative, or use my full potential.</div><div class="qi-row"><input type="number" name="q9" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q10.</div><div class="qbody"><div class="qt">I feel my role or position at work does not get the respect, recognition, or importance it deserves.</div><div class="qi-row"><input type="number" name="q10" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q11.</div><div class="qbody"><div class="qt">The rewards (salary, benefits, appreciation) I get do not feel fair or worth the effort I put in.</div><div class="qi-row"><input type="number" name="q11" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q12.</div><div class="qbody"><div class="qt">The physical conditions of my workplace make work tiring or uncomfortable.</div><div class="qi-row"><input type="number" name="q12" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q13.</div><div class="qbody"><div class="qt">I often have too many tasks assigned to me at the same time.</div><div class="qi-row"><input type="number" name="q13" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q14.</div><div class="qbody"><div class="qt">I am clear about the scope and responsibilities of my job.</div><div class="qi-row"><input type="number" name="q14" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q15.</div><div class="qbody"><div class="qt">My supervisor and colleagues always have consistent expectations from me.</div><div class="qi-row"><input type="number" name="q15" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q16.</div><div class="qbody"><div class="qt">I face pressure from different groups or factions within my organization.</div><div class="qi-row"><input type="number" name="q16" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q17.</div><div class="qbody"><div class="qt">I feel personally responsible if something goes wrong with the people I supervise.</div><div class="qi-row"><input type="number" name="q17" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q18.</div><div class="qbody"><div class="qt">I am given opportunities to participate in setting goals and policies.</div><div class="qi-row"><input type="number" name="q18" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q19.</div><div class="qbody"><div class="qt">I feel empowered to make decisions that affect my area of work.</div><div class="qi-row"><input type="number" name="q19" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q20.</div><div class="qbody"><div class="qt">My co-workers are cooperative and supportive.</div><div class="qi-row"><input type="number" name="q20" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q21.</div><div class="qbody"><div class="qt">My work allows me to use my skills and abilities fully.</div><div class="qi-row"><input type="number" name="q21" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q22.</div><div class="qbody"><div class="qt">I feel my contributions are recognized and valued by others.</div><div class="qi-row"><input type="number" name="q22" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q23.</div><div class="qbody"><div class="qt">I feel the financial returns from my job are not commensurate with my efforts.</div><div class="qi-row"><input type="number" name="q23" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q24.</div><div class="qbody"><div class="qt">I am satisfied with the physical environment and facilities at my workplace.</div><div class="qi-row"><input type="number" name="q24" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q25.</div><div class="qbody"><div class="qt">The deadlines I am given are unrealistic and hard to meet.</div><div class="qi-row"><input type="number" name="q25" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q26.</div><div class="qbody"><div class="qt">I am often unsure about the priorities I should focus on in my work.</div><div class="qi-row"><input type="number" name="q26" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q27.</div><div class="qbody"><div class="qt">Different people or departments at work pull me in different directions.</div><div class="qi-row"><input type="number" name="q27" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q28.</div><div class="qbody"><div class="qt">I feel pressured to take sides or conform to group opinions against my will.</div><div class="qi-row"><input type="number" name="q28" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q29.</div><div class="qbody"><div class="qt">The welfare and progress of the people I manage weighs heavily on my mind.</div><div class="qi-row"><input type="number" name="q29" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q30.</div><div class="qbody"><div class="qt">My suggestions and ideas are considered when important decisions are made.</div><div class="qi-row"><input type="number" name="q30" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q31.</div><div class="qbody"><div class="qt">I feel I have the authority I need to carry out my responsibilities.</div><div class="qi-row"><input type="number" name="q31" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q32.</div><div class="qbody"><div class="qt">There is a lack of trust and openness among colleagues in my team.</div><div class="qi-row"><input type="number" name="q32" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q33.</div><div class="qbody"><div class="qt">My job gives me a sense of accomplishment and personal growth.</div><div class="qi-row"><input type="number" name="q33" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q34.</div><div class="qbody"><div class="qt">My work is acknowledged and appreciated by my superiors.</div><div class="qi-row"><input type="number" name="q34" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q35.</div><div class="qbody"><div class="qt">I often feel physically exhausted due to the work environment.</div><div class="qi-row"><input type="number" name="q35" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q36.</div><div class="qbody"><div class="qt">I frequently work beyond office hours to complete my assigned tasks.</div><div class="qi-row"><input type="number" name="q36" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q37.</div><div class="qbody"><div class="qt">The goals and targets set for me are vague or frequently changing.</div><div class="qi-row"><input type="number" name="q37" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q38.</div><div class="qbody"><div class="qt">I receive clear and consistent feedback from all stakeholders.</div><div class="qi-row"><input type="number" name="q38" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q39.</div><div class="qbody"><div class="qt">I am pressured to comply with decisions that conflict with my personal values.</div><div class="qi-row"><input type="number" name="q39" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q40.</div><div class="qbody"><div class="qt">I have a say in decisions that affect my work and career.</div><div class="qi-row"><input type="number" name="q40" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q41.</div><div class="qbody"><div class="qt">I feel isolated or excluded from my peer group at work.</div><div class="qi-row"><input type="number" name="q41" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q42.</div><div class="qbody"><div class="qt">I have enough variety and challenge in my job.</div><div class="qi-row"><input type="number" name="q42" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q43.</div><div class="qbody"><div class="qt">My workplace provides adequate safety measures and ergonomic facilities.</div><div class="qi-row"><input type="number" name="q43" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q44.</div><div class="qbody"><div class="qt">The volume of work assigned to me is more than I can handle.</div><div class="qi-row"><input type="number" name="q44" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q45.</div><div class="qbody"><div class="qt">The demands placed on me by different roles I play are complementary.</div><div class="qi-row"><input type="number" name="q45" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+<div class="qb"><div class="qn">Q46.</div><div class="qbody"><div class="qt">I feel overwhelmed by the number of responsibilities assigned to me.</div><div class="qi-row"><input type="number" name="q46" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree &nbsp;·&nbsp; 5=Strongly Agree</span></div></div></div>
+
+</div>
+
+<div class="card" style="text-align:center">
+  <button class="btn" onclick="doCalc()">🧮 Calculate My Stress Score</button>
+  <p class="err" id="errmsg"></p>
+  <p class="sav" id="savmsg"></p>
+</div>
+</div>
+
+<script>
+var SD=[{"name": "Sub-Scale I", "label": "Role Overload", "questions": [1, 13, 25, 36, 44, 46], "false_key": [], "ranges": [6, 14, 15, 22, 23, 30]}, {"name": "Sub-Scale II", "label": "Role Ambiguity", "questions": [2, 14, 26, 37], "false_key": [14], "ranges": [4, 9, 10, 12, 13, 20]}, {"name": "Sub-Scale III", "label": "Role Conflict", "questions": [3, 15, 27, 38, 45], "false_key": [15, 38], "ranges": [5, 12, 13, 17, 18, 25]}, {"name": "Sub-Scale IV", "label": "Unreasonable Group & Political Pressure", "questions": [4, 16, 28, 39], "false_key": [], "ranges": [4, 9, 10, 14, 15, 20]}, {"name": "Sub-Scale V", "label": "Responsibility for Persons", "questions": [5, 17, 29], "false_key": [], "ranges": [3, 7, 8, 11, 12, 15]}, {"name": "Sub-Scale VI", "label": "Under Participation", "questions": [6, 18, 30, 40], "false_key": [6, 18, 30, 40], "ranges": [4, 9, 10, 12, 13, 20]}, {"name": "Sub-Scale VII", "label": "Powerlessness", "questions": [7, 19, 31], "false_key": [7, 19, 31], "ranges": [3, 7, 8, 11, 12, 15]}, {"name": "Sub-Scale VIII", "label": "Poor Peer Relations", "questions": [8, 20, 32, 41], "false_key": [8, 32, 41], "ranges": [4, 8, 9, 13, 14, 20]}, {"name": "Sub-Scale IX", "label": "Intrinsic Impoverishment", "questions": [9, 21, 33, 42], "false_key": [21, 33], "ranges": [4, 9, 10, 13, 14, 20]}, {"name": "Sub-Scale X", "label": "Low Status", "questions": [10, 22, 34], "false_key": [10, 22], "ranges": [3, 6, 7, 11, 12, 15]}, {"name": "Sub-Scale XI", "label": "Strenuous Working Conditions", "questions": [12, 24, 35, 43], "false_key": [43], "ranges": [4, 9, 10, 12, 13, 20]}, {"name": "Sub-Scale XII", "label": "Unprofitability", "questions": [11, 23], "false_key": [], "ranges": [2, 4, 5, 7, 8, 10]}];
+var RC={"Sub-Scale I": "Implement workload audits, delegate tasks, and set realistic deadlines. Discuss bandwidth openly with your supervisor.", "Sub-Scale II": "Seek clarity on expectations. Schedule regular 1-on-1s with your supervisor to align on priorities and role boundaries.", "Sub-Scale III": "Document conflicting demands, escalate to a neutral mediator, and establish clear communication channels.", "Sub-Scale IV": "Distance from office politics. Focus on measurable outcomes and build alliances with positive colleagues.", "Sub-Scale V": "Practice shared responsibility. Set healthy limits on after-hours worry about others.", "Sub-Scale VI": "Proactively request inclusion in decision meetings. Document contributions and make expertise visible.", "Sub-Scale VII": "Discuss autonomy gaps with your manager. Identify small areas where you can take ownership.", "Sub-Scale VIII": "Invest in one-on-one conversations with colleagues. Practice open, non-confrontational communication.", "Sub-Scale IX": "Seek stretch assignments, cross-training, or mentoring. Discuss career development with your supervisor.", "Sub-Scale X": "Build your professional profile through publications or presentations. Seek formal recognition.", "Sub-Scale XI": "Report physical discomforts to facilities management. Advocate for ergonomic improvements.", "Sub-Scale XII": "Research market compensation benchmarks. Discuss contributions and growth with HR."};
+var MT={{ model_top3 | safe }};
+var FW={1:1,2:2,3:3,4:4,5:5};
+var RV={1:5,2:4,3:3,4:2,5:1};
+
+function gt(n){var e=document.querySelector('[name="'+n+'"]');return e?e.value.trim():null;}
+function gr(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null;}
+function gq(n){var e=document.querySelector('input[name="q'+n+'"]');if(!e)return NaN;var v=parseInt(e.value);return(isNaN(v)||v<1||v>5)?NaN:v;}
+
+function doCalc(){
+  var err=document.getElementById('errmsg'),sav=document.getElementById('savmsg');
+  err.style.display='none';sav.style.display='none';
+  if(!gt('d_name')){err.textContent='Please enter your Full Name.';err.style.display='block';return;}
+  var rf=['teach','gender','marital','age','edu','desig','emp','exp','tenure'];
+  for(var i=0;i<rf.length;i++){
+    if(!gr(rf[i])){err.textContent='Please complete all demographic fields in Section A.';err.style.display='block';return;}
+  }
+  var allQ=[];
+  SD.forEach(function(s){s.questions.forEach(function(q){if(allQ.indexOf(q)<0)allQ.push(q);});});
+  allQ.sort(function(a,b){return a-b;});
+  for(var j=0;j<allQ.length;j++){
+    if(isNaN(gq(allQ[j]))){
+      err.textContent='Please enter a value (1–5) for Question '+allQ[j]+'.';
+      err.style.display='block';
+      var el=document.querySelector('input[name="q'+allQ[j]+'"]');
+      if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+  }
+  // Score subscales
+  var ss={},sl={};
+  SD.forEach(function(sub){
+    var tot=0;
+    sub.questions.forEach(function(q){
+      var v=gq(q);
+      tot += sub.false_key.indexOf(q)>=0 ? RV[v] : FW[v];
+    });
+    ss[sub.name]=tot;
+    var r=sub.ranges;
+    sl[sub.name]=tot>=r[0]&&tot<=r[1]?'Low':tot>=r[2]&&tot<=r[3]?'Moderate':tot>=r[4]&&tot<=r[5]?'High':'Out of Range';
+  });
+  var ts=0; Object.keys(ss).forEach(function(k){ts+=ss[k];});
+  var ol=ts>=46&&ts<=122?'Low':ts>=123&&ts<=155?'Moderate':ts>=156&&ts<=230?'High':'Out of Range';
+  var srt=SD.slice().sort(function(a,b){return ss[b.name]-ss[a.name];});
+  var u3=srt.slice(0,3);
+
+  var payload={
+    demo:{
+      full_name:gt('d_name'),email:gt('d_email'),contact:gt('d_contact'),
+      institute:gt('d_inst'),teaching_level:gr('teach'),gender:gr('gender'),
+      marital_status:gr('marital'),age_group:gr('age'),education:gr('edu'),
+      designation:gr('desig'),employment_type:gr('emp'),
+      experience:gr('exp'),tenure:gr('tenure')
+    },
+    stress:{
+      total_score:ts, overall_level:ol,
+      subscales:SD.map(function(s){return{name:s.name,label:s.label,score:ss[s.name],level:sl[s.name]};}) ,
+      top3:u3.map(function(s){return{name:s.name,label:s.label,score:ss[s.name],level:sl[s.name]};})
+    }
+  };
+
+  fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){
+        sav.textContent='✅ Assessment saved! Redirecting to your report...';
+        sav.style.display='block';
+        setTimeout(function(){window.location.href='/result';},1400);
+      }else{
+        err.textContent='Save failed: '+d.msg;
+        err.style.display='block';
+      }
+    }).catch(function(){
+      err.textContent='Could not connect to server. Please try again.';
+      err.style.display='block';
+    });
+}
+</script>
+</body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OSI — Home</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4ff;min-height:100vh}
+.topbar{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:14px 26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.brand{font-size:1.05em;font-weight:800}
+.topbar-right{display:flex;align-items:center;gap:18px;font-size:.86em}
+.topbar a{color:#93c5fd;text-decoration:none;font-weight:600}
+.hero{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:56px 24px 48px;text-align:center}
+.hero h1{font-size:2.1em;font-weight:800;margin-bottom:10px;line-height:1.2}
+.hero p{font-size:.97em;color:#bfdbfe;max-width:580px;margin:0 auto;line-height:1.75}
+.content{max-width:920px;margin:0 auto;padding:32px 16px 60px}
+.card{background:#fff;border-radius:16px;padding:28px 32px;margin-bottom:22px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.sec-title{font-size:1.1em;font-weight:800;color:#0f172a;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
+/* Action cards */
+.action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.acard{border-radius:14px;padding:26px 22px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;display:block;color:#fff}
+.acard:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,.16)}
+.acard .ico{font-size:2.4em;margin-bottom:10px;display:block}
+.acard h3{font-size:1em;font-weight:700;margin-bottom:6px}
+.acard p{font-size:.82em;opacity:.9;line-height:1.5}
+.ac-prev{background:linear-gradient(135deg,#0f172a,#1e3a8a)}
+.ac-basic{background:linear-gradient(135deg,#0ea5e9,#0369a1)}
+.ac-adv{background:linear-gradient(135deg,#7c3aed,#4338ca)}
+.badge-uc{display:inline-block;background:rgba(255,255,255,.25);font-size:.72em;padding:2px 8px;border-radius:8px;margin-left:6px;font-weight:600}
+
+/* Info sections */
+.info-para{color:#475569;font-size:.9em;line-height:1.8}
+.info-para+.info-para{margin-top:10px}
+.ul-list{color:#475569;font-size:.9em;line-height:1.9;padding-left:20px;margin-top:8px}
+.scales-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.scale-chip{background:#f0f4ff;border-radius:10px;padding:10px 14px;font-size:.84em;color:#1e40af;border-left:3px solid #3b82f6;font-weight:500}
+.scale-num{font-weight:800;margin-right:5px}
+.note-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:16px 20px;margin-top:14px;font-size:.88em;color:#166534;line-height:1.7}
+</style></head><body>
+
+<div class="topbar">
+  <div class="brand">🧠 OSI Stress Assessment</div>
+  <div class="topbar-right">
+    <span>👤 {{ fullname }}</span>
+    <a href="/logout">Logout →</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Welcome, {{ fullname.split()[0] }}! 👋</h1>
+  <p>Understand and manage your occupational stress with the scientifically validated OSI tool. Get personalised insights and actionable recommendations.</p>
+</div>
+
+<div class="content">
+
+  <!-- ACTION BUTTONS -->
+  <div class="card">
+    <div class="sec-title">🚀 What would you like to do today?</div>
+    <div class="action-grid">
+      {% if has_prev %}
+      <a href="/previous" class="acard ac-prev">
+        <span class="ico">📋</span>
+        <h3>My Previous Assessment</h3>
+        <p>View your saved stress report with scores, StressOmeter, and recommendations.</p>
+      </a>
+      {% endif %}
+      <a href="/basic" class="acard ac-basic">
+        <span class="ico">⚡</span>
+        <h3>Basic Stress Assessment</h3>
+        <p>A quick stress 12-questions check — simple questions for a fast overview of your stress level.</p>
+      </a>
+      <a href="/advanced" class="acard ac-adv">
+        <span class="ico">🔬</span>
+        <h3>Advanced OSI Assessment</h3>
+        <p>Full 46-question assessment with detailed subscale analysis and recommendations.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- WHAT IS STRESS -->
+  <div class="card">
+    <div class="sec-title">🧠 What is Stress?</div>
+    <p class="info-para">Stress is the body's natural response to any demand or challenge — real or perceived. When you face pressure, your nervous system releases hormones like <strong>adrenaline and cortisol</strong> that prepare your body to respond. This is known as the "fight-or-flight" response.</p>
+    <p class="info-para">While short-term stress can sharpen focus and boost performance, <strong>chronic occupational stress</strong> — stress that persists over weeks and months at work — can have serious consequences:</p>
+    <ul class="ul-list">
+      <li><strong>Physical:</strong> Headaches, fatigue, poor sleep, weakened immunity, high blood pressure</li>
+      <li><strong>Emotional:</strong> Anxiety, irritability, depression, feeling overwhelmed or hopeless</li>
+      <li><strong>Behavioural:</strong> Reduced productivity, social withdrawal, poor decision-making</li>
+      <li><strong>Burnout:</strong> Complete physical and emotional exhaustion from prolonged stress</li>
+    </ul>
+    <div class="note-box">✅ <strong>Good news:</strong> Occupational stress is measurable, manageable, and treatable. The first step is understanding your stress levels — which is exactly what the OSI Assessment helps you do.</div>
+  </div>
+
+  <!-- WHAT IS OSI -->
+  <div class="card">
+    <div class="sec-title">📊 What is the Occupational Stress Index (OSI)?</div>
+    <p class="info-para">The <strong>Occupational Stress Index (OSI)</strong> is a scientifically validated psychometric tool developed by <strong>A.K. Srivastava &amp; A.P. Singh (1981)</strong> at Banaras Hindu University. It is specifically designed to measure work-related stress among employed professionals, particularly in academic and organisational settings.</p>
+    <p class="info-para">The OSI measures stress across <strong>12 sub-scales</strong>, each targeting a distinct dimension of occupational stress. Scores range from - <br> <strong>46 to 230</strong>:</p>
+    <div class="scales-grid">
+      <div class="scale-chip"><span class="scale-num">I.</span> Role Overload</div>
+      <div class="scale-chip"><span class="scale-num">II.</span> Role Ambiguity</div>
+      <div class="scale-chip"><span class="scale-num">III.</span> Role Conflict</div>
+      <div class="scale-chip"><span class="scale-num">IV.</span> Group &amp; Political Pressure</div>
+      <div class="scale-chip"><span class="scale-num">V.</span> Responsibility for Persons</div>
+      <div class="scale-chip"><span class="scale-num">VI.</span> Under Participation</div>
+      <div class="scale-chip"><span class="scale-num">VII.</span> Powerlessness</div>
+      <div class="scale-chip"><span class="scale-num">VIII.</span> Poor Peer Relations</div>
+      <div class="scale-chip"><span class="scale-num">IX.</span> Intrinsic Impoverishment</div>
+      <div class="scale-chip"><span class="scale-num">X.</span> Low Status</div>
+      <div class="scale-chip"><span class="scale-num">XI.</span> Strenuous Working Conditions</div>
+      <div class="scale-chip"><span class="scale-num">XII.</span> Unprofitability</div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      📊 <strong>Stress Level :</strong>
+      🟢 <strong>Low Stress</strong> &nbsp;|&nbsp;
+      🟡 <strong>Moderate Stress</strong> &nbsp;|&nbsp;
+      🔴 <strong>High Stress</strong> 
+    </div>
+  </div>
+
+</div>
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OSI — Register</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#0f172a 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
+.box{background:#fff;border-radius:20px;padding:38px 44px;width:100%;max-width:440px;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+.logo{text-align:center;margin-bottom:24px}
+.logo .ico{font-size:2.5em;display:block;margin-bottom:6px}
+.logo h1{font-size:1.35em;color:#0f172a;font-weight:800;margin-bottom:3px}
+.logo p{color:#64748b;font-size:.83em}
+.flbl{font-weight:600;font-size:.83em;color:#374151;display:block;margin-bottom:4px}
+input{width:100%;padding:10px 13px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:.9em;outline:none;margin-bottom:13px;transition:border .2s;font-family:inherit}
+input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.hint{font-size:.76em;color:#94a3b8;margin-top:-10px;margin-bottom:11px}
+.btn{width:100%;background:linear-gradient(135deg,#3b82f6,#1e40af);color:#fff;border:none;padding:12px;border-radius:10px;font-size:.94em;font-weight:700;cursor:pointer;font-family:inherit}
+.btn:hover{opacity:.9}
+.err{background:#fef2f2;border:1px solid #fca5a5;color:#b91c1c;padding:10px 14px;border-radius:8px;font-size:.83em;margin-bottom:13px}
+.lnk{text-align:center;margin-top:16px;font-size:.84em;color:#64748b}
+.lnk a{color:#3b82f6;font-weight:600;text-decoration:none}
+</style></head><body>
+<div class="box">
+  <div class="logo">
+    <span class="ico">🧠</span>
+    <h1>Create Account</h1>
+    <p>Start your OSI stress assessment journey</p>
+  </div>
+  {% if error %}<div class="err">⚠ {{ error }}</div>{% endif %}
+  <form method="POST">
+    <label class="flbl">Full Name *</label>
+    <input type="text" name="fullname" placeholder="Your full name" required>
+    <label class="flbl">Email *</label>
+    <input type="email" name="email" placeholder="Your email address" required>
+    <label class="flbl">Username *</label>
+    <input type="text" name="username" placeholder="Choose a username" required>
+    <p class="hint">Letters, numbers and underscore only. No spaces.</p>
+    <label class="flbl">Password *</label>
+    <input type="password" name="password" placeholder="Choose a strong password" required>
+    <label class="flbl">Confirm Password *</label>
+    <input type="password" name="confirm" placeholder="Repeat your password" required>
+    <button class="btn" type="submit">Create Account &amp; Start →</button>
+  </form>
+  <div class="lnk">Already have an account? <a href="/login">Login here</a></div>
+</div>
+</body></html>

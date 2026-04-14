@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OSI — Basic Assessment</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4ff}
+.topbar{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.brand{font-size:1em;font-weight:800}
+.topbar a{color:#93c5fd;text-decoration:none;font-size:.84em;font-weight:600}
+.wrap{max-width:860px;margin:0 auto;padding:18px 12px 60px}
+.card{background:#fff;border-radius:14px;padding:22px 26px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.hdr{font-size:1.4em;font-weight:800;color:#0f172a;margin-bottom:3px}
+.sub{color:#64748b;font-size:.87em}
+.sec{font-size:.97em;font-weight:700;color:#0f172a;border-left:4px solid #3b82f6;padding-left:10px;margin:0 0 14px}
+.flbl{font-weight:600;font-size:.82em;color:#374151;display:block;margin:12px 0 4px}
+input[type=text]{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:.88em;outline:none;font-family:inherit}
+input[type=text]:focus{border-color:#3b82f6}
+.rgrp{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.rgrp label{display:flex;align-items:center;gap:5px;padding:5px 11px;border:1.5px solid #e2e8f0;border-radius:8px;cursor:pointer;font-size:.82em;transition:all .15s}
+.rgrp label:hover{border-color:#3b82f6;background:#eff6ff}
+.rgrp input[type=radio]{accent-color:#3b82f6}
+.qb{background:#f8fafc;border-radius:10px;padding:9px 12px;margin-bottom:8px;display:flex;gap:8px;align-items:flex-start}
+.qn{font-weight:700;color:#3b82f6;min-width:30px;font-size:.84em;padding-top:2px;flex-shrink:0}
+.qbody{flex:1}
+.qt{color:#334155;font-size:.85em;line-height:1.5;margin-bottom:6px}
+.qfk{font-size:.72em;color:#d97706;background:#fef3c7;border-radius:5px;padding:1px 6px;font-weight:600;margin-left:4px;display:inline}
+.qi-row{display:flex;align-items:center;gap:8px}
+.qi{width:62px;padding:5px 8px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:.92em;text-align:center;outline:none;font-family:inherit}
+.qi:focus{border-color:#3b82f6}
+.qhint{font-size:.73em;color:#94a3b8}
+.btn{background:linear-gradient(135deg,#7c3aed,#4338ca);color:#fff;border:none;padding:13px 38px;border-radius:10px;font-size:.97em;font-weight:700;cursor:pointer;display:block;margin:0 auto;font-family:inherit}
+.btn:hover{opacity:.88}
+.err{color:#dc2626;font-size:.83em;margin-top:9px;text-align:center;display:none;padding:8px 12px;background:#fef2f2;border-radius:8px}
+.sav{color:#16a34a;font-size:.83em;margin-top:9px;text-align:center;display:none;padding:8px 12px;background:#f0fdf4;border-radius:8px}
+</style></head><body>
+
+<div class="topbar">
+  <div class="brand">🧠 OSI — Basic Assessment</div>
+  <a href="/home">← Home</a>
+</div>
+
+<div class="wrap">
+
+<div class="card">
+  <div class="hdr">Basic OSI Assessment</div>
+  <div class="sub">Occupational Stress Index · Srivastava &amp; Singh (1981) · 12-Question Screening Version + Demographics</div>
+</div>
+
+<!-- SECTION A: DEMOGRAPHICS (identical to Advanced) -->
+<div class="card">
+  <div class="sec">Section A — Demographic Details</div>
+  <label class="flbl">Full Name *</label><input type="text" name="d_name" placeholder="Your full name">
+  <label class="flbl">Email ID *</label><input type="text" name="d_email" placeholder="Email address">
+  <label class="flbl">Contact Number *</label><input type="text" name="d_contact" placeholder="Contact number">
+  <label class="flbl">Institute, Department and University *</label><input type="text" name="d_inst" placeholder="e.g. Dept of CS, ABC University">
+  <label class="flbl">Teaching Level *</label>
+  <div class="rgrp"><label><input type="radio" name="teach" value="UG"> UG (Under Graduate)</label><label><input type="radio" name="teach" value="PG"> PG (Post Graduate)</label></div>
+  <label class="flbl">Gender *</label>
+  <div class="rgrp"><label><input type="radio" name="gender" value="Male"> Male</label><label><input type="radio" name="gender" value="Female"> Female</label></div>
+  <label class="flbl">Marital Status *</label>
+  <div class="rgrp"><label><input type="radio" name="marital" value="Married"> Married</label><label><input type="radio" name="marital" value="Unmarried"> Unmarried</label></div>
+  <label class="flbl">Age Group *</label>
+  <div class="rgrp"><label><input type="radio" name="age" value="24-34"> 24–34</label><label><input type="radio" name="age" value="35-44"> 35–44</label><label><input type="radio" name="age" value="45-60 and above"> 45–60 and above</label></div>
+  <label class="flbl">Education Qualification *</label>
+  <div class="rgrp"><label><input type="radio" name="edu" value="Graduate"> Graduate</label><label><input type="radio" name="edu" value="Post-Graduate"> Post-Graduate</label><label><input type="radio" name="edu" value="MPhil"> MPhil</label><label><input type="radio" name="edu" value="PhD"> PhD</label><label><input type="radio" name="edu" value="Others"> Others</label></div>
+  <label class="flbl">Designation *</label>
+  <div class="rgrp"><label><input type="radio" name="desig" value="Director/Principal"> Director/Principal</label><label><input type="radio" name="desig" value="Dean"> Dean</label><label><input type="radio" name="desig" value="Professor"> Professor</label><label><input type="radio" name="desig" value="Associate Professor"> Associate Professor</label><label><input type="radio" name="desig" value="Assistant Professor"> Assistant Professor</label></div>
+  <label class="flbl">Type of Employment *</label>
+  <div class="rgrp"><label><input type="radio" name="emp" value="Regular"> Regular</label><label><input type="radio" name="emp" value="Contractual"> Contractual</label></div>
+  <label class="flbl">Total Experience (inclusive of Industrial experience) *</label>
+  <div class="rgrp"><label><input type="radio" name="exp" value="1-5 years"> 1–5 yrs</label><label><input type="radio" name="exp" value="6-10 years"> 6–10 yrs</label><label><input type="radio" name="exp" value="11-15 years"> 11–15 yrs</label><label><input type="radio" name="exp" value="16-20 years"> 16–20 yrs</label><label><input type="radio" name="exp" value="21-25 years"> 21–25 yrs</label><label><input type="radio" name="exp" value="More than 25 years"> 25+ yrs</label></div>
+  <label class="flbl">Tenure in Current Organization *</label>
+  <div class="rgrp"><label><input type="radio" name="tenure" value="Less than one year"> &lt;1 yr</label><label><input type="radio" name="tenure" value="1-5 years"> 1–5 yrs</label><label><input type="radio" name="tenure" value="6-10 years"> 6–10 yrs</label><label><input type="radio" name="tenure" value="More than 10 years"> 10+ yrs</label></div>
+</div>
+
+<!-- SECTION B: 12 QUESTIONS — numeric input 1-5, same UI as Advanced -->
+<div class="card">
+  <div class="sec">Section B — OSI Basic Questionnaire (12 Questions)</div>
+  <p style="font-size:.82em;color:#64748b;margin-bottom:14px;line-height:1.85">
+    Enter a number from <strong>1 to 5</strong> for each statement:<br>
+    <strong>1</strong> = Strongly Disagree &nbsp;|&nbsp; <strong>2</strong> = Do Not Agree &nbsp;|&nbsp; <strong>3</strong> = Not Sure &nbsp;|&nbsp; <strong>4</strong> = Agree &nbsp;|&nbsp; <strong>5</strong> = Strongly Agree<br>
+    <span style="color:#d97706">⚠ Questions marked <strong>FALSE KEY</strong> contain reverse-scored items — the system handles this automatically.</span>
+  </p>
+
+  <div class="qb"><div class="qn">Q1.</div><div class="qbody">
+    <div class="qt">I often have too much work to complete in the time available to me.<br><em style="font-size:.78em;color:#64748b">Sub-Scale I — Role Overload &nbsp;|&nbsp; Items: 1, 13, 25, 36, 44, 46 &nbsp;|&nbsp; All true-keyed (6 items)</em></div>
+    <div class="qi-row"><input type="number" name="q1" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q2.</div><div class="qbody">
+    <div class="qt">I frequently feel unclear or confused about what is really expected of me in my job.<br><em style="font-size:.78em;color:#64748b">Sub-Scale II — Role Ambiguity &nbsp;|&nbsp; Items: 2, 14*, 26, 37 &nbsp;|&nbsp; 3 true + <span style="color:#d97706">1 false-keyed</span></em></div>
+    <div class="qi-row"><input type="number" name="q2" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q3.</div><div class="qbody">
+    <div class="qt">I get conflicting instructions or demands from different people at work (like boss, team, clients).<br><em style="font-size:.78em;color:#64748b">Sub-Scale III — Role Conflict &nbsp;|&nbsp; Items: 3, 15*, 27, 38*, 45 &nbsp;|&nbsp; 3 true + <span style="color:#d97706">2 false-keyed</span></em></div>
+    <div class="qi-row"><input type="number" name="q3" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q4.</div><div class="qbody">
+    <div class="qt">Workplace politics, favouritism, or unnecessary group pressures make my job harder than it should be.<br><em style="font-size:.78em;color:#64748b">Sub-Scale IV — Unreasonable Group &amp; Political Pressures &nbsp;|&nbsp; Items: 4, 16, 28, 39 &nbsp;|&nbsp; All true-keyed (4 items)</em></div>
+    <div class="qi-row"><input type="number" name="q4" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q5.</div><div class="qbody">
+    <div class="qt">I carry a lot of worry or responsibility for the safety, well-being, or success of other people (team members, students, customers, etc.).<br><em style="font-size:.78em;color:#64748b">Sub-Scale V — Responsibility for Persons &nbsp;|&nbsp; Items: 5, 17, 29 &nbsp;|&nbsp; All true-keyed (3 items)</em></div>
+    <div class="qi-row"><input type="number" name="q5" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q6.</div><div class="qbody">
+    <div class="qt">My ideas, opinions, or inputs are rarely asked for or taken seriously in important decisions at work. <span class="qfk">FALSE KEY</span><br><em style="font-size:.78em;color:#64748b">Sub-Scale VI — Under Participation &nbsp;|&nbsp; Items: 6*, 18*, 30*, 40* &nbsp;|&nbsp; All <span style="color:#d97706">false-keyed</span> (4 items)</em></div>
+    <div class="qi-row"><input type="number" name="q6" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q7.</div><div class="qbody">
+    <div class="qt">I feel I have very little control or authority over things that directly affect my job and results. <span class="qfk">FALSE KEY</span><br><em style="font-size:.78em;color:#64748b">Sub-Scale VII — Powerlessness &nbsp;|&nbsp; Items: 7*, 19*, 31* &nbsp;|&nbsp; All <span style="color:#d97706">false-keyed</span> (3 items)</em></div>
+    <div class="qi-row"><input type="number" name="q7" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q8.</div><div class="qbody">
+    <div class="qt">My relationships with colleagues or teammates feel unsupportive, tense, or difficult. <span class="qfk">FALSE KEY</span><br><em style="font-size:.78em;color:#64748b">Sub-Scale VIII — Poor Peer Relations &nbsp;|&nbsp; Items: 8*, 20, 32*, 41* &nbsp;|&nbsp; 1 true + <span style="color:#d97706">3 false-keyed</span></em></div>
+    <div class="qi-row"><input type="number" name="q8" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q9.</div><div class="qbody">
+    <div class="qt">My job doesn't give me enough chances to learn new things, be creative, or use my full potential.<br><em style="font-size:.78em;color:#64748b">Sub-Scale IX — Intrinsic Impoverishment &nbsp;|&nbsp; Items: 9, 21*, 33*, 42 &nbsp;|&nbsp; 2 true + <span style="color:#d97706">2 false-keyed</span></em></div>
+    <div class="qi-row"><input type="number" name="q9" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q10.</div><div class="qbody">
+    <div class="qt">I feel my role or position at work doesn't get the respect, recognition, or importance it deserves. <span class="qfk">FALSE KEY</span><br><em style="font-size:.78em;color:#64748b">Sub-Scale X — Low Status &nbsp;|&nbsp; Items: 10*, 22*, 34 &nbsp;|&nbsp; 1 true + <span style="color:#d97706">2 false-keyed</span></em></div>
+    <div class="qi-row"><input type="number" name="q10" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q11.</div><div class="qbody">
+    <div class="qt">The physical conditions of my workplace (noise, heat, space, equipment, hazards, etc.) make work tiring or uncomfortable.<br><em style="font-size:.78em;color:#64748b">Sub-Scale XI — Strenuous Working Conditions &nbsp;|&nbsp; Items: 12, 24, 35, 43* &nbsp;|&nbsp; 3 true + <span style="color:#d97706">1 false-keyed</span></em></div>
+    <div class="qi-row"><input type="number" name="q11" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+  <div class="qb"><div class="qn">Q12.</div><div class="qbody">
+    <div class="qt">The rewards (salary, benefits, appreciation) I get don't feel fair or worth the effort I put in.<br><em style="font-size:.78em;color:#64748b">Sub-Scale XII — Unprofitability &nbsp;|&nbsp; Items: 11, 23 &nbsp;|&nbsp; All true-keyed (2 items)</em></div>
+    <div class="qi-row"><input type="number" name="q12" class="qi" min="1" max="5" placeholder="1-5"><span class="qhint">1=Strongly Disagree · 5=Strongly Agree</span></div>
+  </div></div>
+
+</div>
+
+<div class="card" style="text-align:center">
+  <button class="btn" onclick="doCalc()">🧮 Calculate My Stress Score</button>
+  <p class="err" id="errmsg"></p>
+  <p class="sav" id="savmsg"></p>
+</div>
+</div>
+
+<script>
+/*
+  Basic OSI Scoring — One value entered per subscale (v = 1 to 5)
+  ─────────────────────────────────────────────────────────────────
+  Score = trueCount * v + falseCount * (6 - v)
+
+  Subscale definitions: [name, label, trueCount, falseCount, ranges[6]]
+  Ranges are the SAME as the full OSI advanced assessment.
+  Total score uses the same OSI range: Low 46-122 | Moderate 123-155 | High 156-230
+
+  From the OSI schedule (image table):
+  I:    1,13,25,36,44,46        → tc=6, fc=0
+  II:   2,14*,26,37             → tc=3, fc=1
+  III:  3,15*,27,38*,45         → tc=3, fc=2
+  IV:   4,16,28,39              → tc=4, fc=0
+  V:    5,17,29                 → tc=3, fc=0
+  VI:   6*,18*,30*,40*          → tc=0, fc=4
+  VII:  7*,19*,31*              → tc=0, fc=3
+  VIII: 8*,20,32*,41*           → tc=1, fc=3
+  IX:   9,21*,33*,42            → tc=2, fc=2
+  X:    10*,22*,34              → tc=1, fc=2
+  XI:   12,24,35,43*            → tc=3, fc=1
+  XII:  11,23                   → tc=2, fc=0
+*/
+var BSD=[
+  {name:'Sub-Scale I',   label:'Role Overload',                           qnum:1,  tc:6, fc:0, ranges:[6,14,15,22,23,30]},
+  {name:'Sub-Scale II',  label:'Role Ambiguity',                          qnum:2,  tc:3, fc:1, ranges:[4,9,10,12,13,20]},
+  {name:'Sub-Scale III', label:'Role Conflict',                           qnum:3,  tc:3, fc:2, ranges:[5,12,13,17,18,25]},
+  {name:'Sub-Scale IV',  label:'Unreasonable Group & Political Pressure', qnum:4,  tc:4, fc:0, ranges:[4,9,10,14,15,20]},
+  {name:'Sub-Scale V',   label:'Responsibility for Persons',              qnum:5,  tc:3, fc:0, ranges:[3,7,8,11,12,15]},
+  {name:'Sub-Scale VI',  label:'Under Participation',                     qnum:6,  tc:0, fc:4, ranges:[4,9,10,12,13,20]},
+  {name:'Sub-Scale VII', label:'Powerlessness',                           qnum:7,  tc:0, fc:3, ranges:[3,7,8,11,12,15]},
+  {name:'Sub-Scale VIII',label:'Poor Peer Relations',                     qnum:8,  tc:1, fc:3, ranges:[4,8,9,13,14,20]},
+  {name:'Sub-Scale IX',  label:'Intrinsic Impoverishment',                qnum:9,  tc:2, fc:2, ranges:[4,9,10,13,14,20]},
+  {name:'Sub-Scale X',   label:'Low Status',                              qnum:10, tc:1, fc:2, ranges:[3,6,7,11,12,15]},
+  {name:'Sub-Scale XI',  label:'Strenuous Working Conditions',            qnum:11, tc:3, fc:1, ranges:[4,9,10,12,13,20]},
+  {name:'Sub-Scale XII', label:'Unprofitability',                         qnum:12, tc:2, fc:0, ranges:[2,4,5,7,8,10]}
+];
+
+function gt(n){var e=document.querySelector('[name="'+n+'"]');return e?e.value.trim():'';}
+function gr(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null;}
+function gq(n){var e=document.querySelector('input[name="q'+n+'"]');if(!e)return NaN;var v=parseInt(e.value);return(isNaN(v)||v<1||v>5)?NaN:v;}
+
+function subLevel(score, ranges){
+  if(score>=ranges[0]&&score<=ranges[1]) return 'Low';
+  if(score>=ranges[2]&&score<=ranges[3]) return 'Moderate';
+  if(score>=ranges[4]&&score<=ranges[5]) return 'High';
+  return score<ranges[0]?'Low':'High';
+}
+function totLevel(ts){
+  if(ts<=122) return 'Low';
+  if(ts<=155) return 'Moderate';
+  return 'High';
+}
+
+function doCalc(){
+  var err=document.getElementById('errmsg'),sav=document.getElementById('savmsg');
+  err.style.display='none';sav.style.display='none';
+
+  if(!gt('d_name')){err.textContent='Please enter your Full Name.';err.style.display='block';return;}
+  var rf=['teach','gender','marital','age','edu','desig','emp','exp','tenure'];
+  for(var i=0;i<rf.length;i++){
+    if(!gr(rf[i])){err.textContent='Please complete all demographic fields in Section A.';err.style.display='block';return;}
+  }
+  for(var q=1;q<=12;q++){
+    if(isNaN(gq(q))){
+      err.textContent='Please enter a valid value (1–5) for Question '+q+'.';
+      err.style.display='block';
+      var el=document.querySelector('input[name="q'+q+'"]');
+      if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+  }
+
+  // Score each subscale: trueCount * v + falseCount * (6 - v)
+  var ss={},sl={};
+  BSD.forEach(function(sub){
+    var v=gq(sub.qnum);
+    var scored = (sub.tc * v) + (sub.fc * (6 - v));
+    ss[sub.name]=scored;
+    sl[sub.name]=subLevel(scored, sub.ranges);
+  });
+
+  var ts=0; Object.keys(ss).forEach(function(k){ts+=ss[k];});
+  var ol=totLevel(ts);
+
+  var srt=BSD.slice().sort(function(a,b){return ss[b.name]-ss[a.name];});
+  var top3=srt.slice(0,3);
+
+  var payload={
+    demo:{
+      full_name:gt('d_name'),email:gt('d_email'),contact:gt('d_contact'),
+      institute:gt('d_inst'),teaching_level:gr('teach'),gender:gr('gender'),
+      marital_status:gr('marital'),age_group:gr('age'),education:gr('edu'),
+      designation:gr('desig'),employment_type:gr('emp'),
+      experience:gr('exp'),tenure:gr('tenure')
+    },
+    stress:{
+      total_score:ts,overall_level:ol,
+      assessment_type:'basic',
+      subscales:BSD.map(function(s){return{name:s.name,label:s.label,score:ss[s.name],level:sl[s.name]};}),
+      top3:top3.map(function(s){return{name:s.name,label:s.label,score:ss[s.name],level:sl[s.name]};})
+    }
+  };
+
+  fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){
+        sav.textContent='✅ Assessment saved! Redirecting to your report...';
+        sav.style.display='block';
+        setTimeout(function(){window.location.href='/result';},1400);
+      }else{
+        err.textContent='Save failed: '+d.msg;err.style.display='block';
+      }
+    }).catch(function(){
+      err.textContent='Could not connect to server. Please try again.';err.style.display='block';
+    });
+}
+</script>
+</body></html>
