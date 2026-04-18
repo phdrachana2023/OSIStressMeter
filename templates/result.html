@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OSI — Stress Report</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -11,30 +10,20 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4ff}
 .wrap{max-width:900px;margin:0 auto;padding:18px 12px 100px}
 .card{background:#fff;border-radius:14px;padding:22px 26px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .sec{font-size:.97em;font-weight:700;color:#0f172a;border-left:4px solid #3b82f6;padding-left:10px;margin:0 0 14px}
-
-/* Hero card */
 .hero-card{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;border-radius:14px;padding:24px 28px;margin-bottom:16px}
 .hero-card h2{font-size:1.3em;font-weight:800;margin-bottom:4px}
 .hero-card .sub{font-size:.85em;color:#bfdbfe}
-
-/* StressOmeter */
 .meter-wrap{text-align:center;padding:8px 0 16px}
 .meter-wrap h3{font-size:1em;font-weight:700;color:#0f172a;margin-bottom:16px}
 #meterSvg{max-width:360px;width:100%;display:block;margin:0 auto}
 .score-big{font-size:2.6em;font-weight:900;margin:12px 0 6px}
 .level-badge{display:inline-block;padding:6px 24px;border-radius:20px;font-size:1em;font-weight:700;margin-bottom:6px}
-.lv-low{background:#dcfce7;color:#15803d}
-.lv-mod{background:#fef9c3;color:#a16207}
-.lv-high{background:#fee2e2;color:#b91c1c}
+.lv-low{background:#dcfce7;color:#15803d}.lv-mod{background:#fef9c3;color:#a16207}.lv-high{background:#fee2e2;color:#b91c1c}
 .score-range{font-size:.83em;color:#64748b}
-
-/* Demo grid */
 .demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
 .di{background:#f8fafc;border-radius:9px;padding:9px 13px}
 .di-lbl{font-size:.75em;color:#64748b;margin-bottom:2px}
 .di-val{font-size:.88em;font-weight:600;color:#0f172a}
-
-/* Table */
 table{width:100%;border-collapse:collapse;font-size:.84em}
 th{background:#0f172a;color:#fff;padding:9px 12px;text-align:left;font-weight:600;font-size:.85em}
 td{padding:8px 12px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
@@ -42,8 +31,6 @@ tr:nth-child(even) td{background:#f8fafc}
 .tot-row td{font-weight:700;background:#eef2ff!important}
 .badge{display:inline-block;padding:2px 10px;border-radius:12px;color:#fff;font-weight:700;font-size:.78em}
 .b-low{background:#16a34a}.b-mod{background:#ca8a04}.b-high{background:#dc2626}.b-oor{background:#94a3b8}
-
-/* Concern cards */
 .concern-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .cc{border-radius:12px;padding:16px 18px;border-left:5px solid}
 .cc-model{border-color:#dc2626;background:#fff5f5}
@@ -52,14 +39,31 @@ tr:nth-child(even) td{background:#f8fafc}
 .cc .clev{margin-bottom:7px}
 .cc .ctip{font-size:.83em;color:#475569;line-height:1.6}
 .cc .cpin{font-size:.8em;color:#dc2626;margin-bottom:5px}
-
-/* Relief */
 .relief-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
 .ri{background:#f0fdf4;border-radius:10px;padding:11px 14px;font-size:.85em;color:#166534;border-left:3px solid #16a34a;line-height:1.55}
-
-/* Helplines */
-.hl{display:flex;gap:10px;padding:9px 13px;background:#f8fafc;border-radius:8px;margin-bottom:7px;font-size:.83em}
+.hl{display:flex;gap:10px;padding:9px 13px;background:rgba(255,255,255,.08);border-radius:8px;margin-bottom:7px;font-size:.83em;color:#e2e8f0}
 .hl a{color:#3b82f6}
+
+/* Feedback styles */
+.fb-section{background:#fff;border-radius:14px;padding:22px 26px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-top:4px solid #7c3aed}
+.fb-title{font-size:.97em;font-weight:700;color:#0f172a;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.star-row{display:flex;gap:6px;margin-bottom:14px}
+.star{font-size:1.8em;cursor:pointer;transition:transform .15s;filter:grayscale(1);opacity:.4}
+.star.active,.star:hover~.star-row .star{filter:none;opacity:1}
+.star.sel{filter:none;opacity:1;transform:scale(1.15)}
+textarea.fb-ta{width:100%;padding:11px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:.87em;font-family:inherit;resize:vertical;min-height:90px;outline:none;transition:border .2s}
+textarea.fb-ta:focus{border-color:#7c3aed;box-shadow:0 0 0 3px rgba(124,58,237,.1)}
+.fb-btn{background:linear-gradient(135deg,#7c3aed,#4338ca);color:#fff;border:none;padding:11px 28px;border-radius:10px;font-size:.9em;font-weight:700;cursor:pointer;font-family:inherit;margin-top:10px;transition:opacity .2s}
+.fb-btn:hover:not(:disabled){opacity:.88}
+.fb-btn:disabled{opacity:.5;cursor:not-allowed}
+.fb-ok{display:none;background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:12px 16px;color:#166534;font-size:.87em;margin-top:10px;font-weight:600}
+.fb-err{display:none;background:#fef2f2;border:1px solid #fca5a5;color:#b91c1c;padding:10px 14px;border-radius:8px;font-size:.84em;margin-top:8px}
+/* Saved feedback display (previous view) */
+.fb-display{background:#f5f3ff;border-radius:12px;padding:16px 20px;border-left:4px solid #7c3aed}
+.fb-display .fb-stars{font-size:1.3em;margin-bottom:8px}
+.fb-display .fb-text{font-size:.9em;color:#1e1b4b;line-height:1.7;font-style:italic}
+.fb-display .fb-meta{font-size:.78em;color:#64748b;margin-top:8px}
+.fb-none{color:#94a3b8;font-size:.88em;font-style:italic}
 
 /* Chatbot */
 #chatbot{position:fixed;bottom:22px;right:22px;z-index:9999}
@@ -67,25 +71,21 @@ tr:nth-child(even) td{background:#f8fafc}
 #chat-toggle:hover{transform:scale(1.08)}
 #chat-box{display:none;width:330px;background:#fff;border-radius:16px;box-shadow:0 8px 36px rgba(0,0,0,.16);flex-direction:column;overflow:hidden;margin-bottom:12px;border:1px solid #e2e8f0}
 #chat-hdr{background:linear-gradient(135deg,#7c3aed,#4338ca);color:#fff;padding:13px 16px;font-weight:700;font-size:.9em;display:flex;justify-content:space-between;align-items:center}
-#chat-hdr .close{background:none;border:none;color:#fff;font-size:1.1em;cursor:pointer;line-height:1}
+#chat-hdr .close{background:none;border:none;color:#fff;font-size:1.1em;cursor:pointer}
 #chat-msgs{height:270px;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
 .msg{padding:9px 12px;border-radius:10px;font-size:.84em;max-width:88%;line-height:1.55}
 .msg.bot{background:#f1f5f9;color:#0f172a;align-self:flex-start;border-radius:10px 10px 10px 0}
 .msg.user{background:linear-gradient(135deg,#7c3aed,#4338ca);color:#fff;align-self:flex-end;border-radius:10px 10px 0 10px}
 #chat-inp-row{display:flex;border-top:1px solid #e2e8f0;padding:8px 10px;gap:6px}
 #chat-inp{flex:1;border:none;outline:none;font-size:.85em;font-family:inherit}
-#chat-send{background:#7c3aed;color:#fff;border:none;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.83em;font-weight:600;font-family:inherit}
+#chat-send{background:#7c3aed;color:#fff;border:none;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.83em;font-weight:600}
 </style></head>
 <body>
 
 <div class="topbar">
   <div class="brand">🧠 OSI — Stress Report</div>
   <div class="topbar-links">
-    {% if is_previous is defined and is_previous %}
     <a href="/advanced">Retake Assessment</a>
-    {% else %}
-    <a href="/advanced">Retake</a>
-    {% endif %}
     <a href="/home">← Home</a>
   </div>
 </div>
@@ -106,9 +106,8 @@ tr:nth-child(even) td{background:#f8fafc}
     ('sub12','Sub-Scale XII','Unprofitability',(2,4,5,7,8,10)),
 ]%}
 
-<!-- HEADER -->
 <div class="hero-card">
-  <h2>📊 {% if is_previous is defined and is_previous %}Previous{% else %}Your{% endif %} Stress Assessment Report</h2>
+  <h2>📊 {% if is_previous %}Previous{% else %}Your{% endif %} Stress Assessment Report</h2>
   <div class="sub">{{ fullname }} &nbsp;·&nbsp; {{ demo.designation if demo else '' }} &nbsp;·&nbsp; Assessed: {{ stress.timestamp }}</div>
 </div>
 
@@ -118,19 +117,15 @@ tr:nth-child(even) td{background:#f8fafc}
   <div class="meter-wrap">
     <h3>Your Occupational Stress Level</h3>
     <svg id="meterSvg" viewBox="0 0 360 210" xmlns="http://www.w3.org/2000/svg">
-      <!-- Colored arc bands -->
       <path d="M 32 178 A 148 148 0 0 1 130 36" fill="none" stroke="#dcfce7" stroke-width="30" stroke-linecap="butt"/>
       <path d="M 130 36 A 148 148 0 0 1 230 36" fill="none" stroke="#fef9c3" stroke-width="30" stroke-linecap="butt"/>
       <path d="M 230 36 A 148 148 0 0 1 328 178" fill="none" stroke="#fee2e2" stroke-width="30" stroke-linecap="butt"/>
-      <!-- Band labels -->
       <text x="18"  y="200" font-size="11" fill="#15803d" font-weight="800">LOW</text>
       <text x="152" y="20"  font-size="11" fill="#a16207" font-weight="800" text-anchor="middle">MODERATE</text>
       <text x="342" y="200" font-size="11" fill="#b91c1c" font-weight="800" text-anchor="end">HIGH</text>
-      <!-- Sub-labels -->
       <text x="46"  y="158" font-size="9" fill="#15803d">46–122</text>
       <text x="142" y="52"  font-size="9" fill="#a16207">123–155</text>
       <text x="258" y="158" font-size="9" fill="#b91c1c">156–230</text>
-      <!-- Needle -->
       <line id="needle" x1="180" y1="178" x2="180" y2="52"
             stroke="#0f172a" stroke-width="3.5" stroke-linecap="round"
             transform="rotate(-90 180 178)"/>
@@ -138,10 +133,7 @@ tr:nth-child(even) td{background:#f8fafc}
       <circle cx="180" cy="178" r="4" fill="#fff"/>
     </svg>
     <div class="score-big" id="scoreNum" style="color:#0f172a">{{ stress.total_score }}</div>
-    <div class="level-badge
-      {%- if stress.overall_level=='Low' %} lv-low
-      {%- elif stress.overall_level=='Moderate' %} lv-mod
-      {%- else %} lv-high{%- endif %}">
+    <div class="level-badge{%- if stress.overall_level=='Low' %} lv-low{%- elif stress.overall_level=='Moderate' %} lv-mod{%- else %} lv-high{%- endif %}">
       {{ stress.overall_level }} Stress
     </div>
     <div class="score-range">Total Score: {{ stress.total_score }} &nbsp;|&nbsp; Scale: 46–230 &nbsp;|&nbsp; Low: 46–122 | Moderate: 123–155 | High: 156–230</div>
@@ -168,7 +160,6 @@ tr:nth-child(even) td{background:#f8fafc}
 <!-- SUBSCALE TABLE -->
 <div class="card">
   <div class="sec">📊 12 Subscale Scores</div>
-
   <table>
     <tr><th>Sub-Scale</th><th>Score</th><th>OSI Range</th><th>Level</th></tr>
     {% for k,sn,sl,rng in subs %}
@@ -176,26 +167,19 @@ tr:nth-child(even) td{background:#f8fafc}
       <td><strong>{{ sn }}</strong> — {{ sl }}</td>
       <td style="text-align:center"><strong>{{ stress[k+'_score'] }}</strong></td>
       <td style="font-size:.8em">Low {{ rng[0] }}–{{ rng[1] }} | Mod {{ rng[2] }}–{{ rng[3] }} | High {{ rng[4] }}–{{ rng[5] }}</td>
-      <td><span class="badge
-        {%- if stress[k+'_level']=='Low' %} b-low
-        {%- elif stress[k+'_level']=='Moderate' %} b-mod
-        {%- elif stress[k+'_level']=='High' %} b-high
-        {%- else %} b-oor{%- endif %}">{{ stress[k+'_level'] }}</span></td>
+      <td><span class="badge{%- if stress[k+'_level']=='Low' %} b-low{%- elif stress[k+'_level']=='Moderate' %} b-mod{%- elif stress[k+'_level']=='High' %} b-high{%- else %} b-oor{%- endif %}">{{ stress[k+'_level'] }}</span></td>
     </tr>
     {% endfor %}
     <tr class="tot-row">
       <td><strong>TOTAL SCORE (Scale as a Whole)</strong></td>
       <td style="text-align:center"><strong>{{ stress.total_score }}</strong></td>
       <td style="font-size:.8em">Low 46–122 | Moderate 123–155 | High 156–230</td>
-      <td><span class="badge
-        {%- if stress.overall_level=='Low' %} b-low
-        {%- elif stress.overall_level=='Moderate' %} b-mod
-        {%- else %} b-high{%- endif %}">{{ stress.overall_level }}</span></td>
+      <td><span class="badge{%- if stress.overall_level=='Low' %} b-low{%- elif stress.overall_level=='Moderate' %} b-mod{%- else %} b-high{%- endif %}">{{ stress.overall_level }}</span></td>
     </tr>
   </table>
 </div>
 
-<!-- USER TOP 3 WITH RECOMMENDATIONS — shown first -->
+<!-- USER TOP 3 -->
 {% set recs = {
   'Sub-Scale I':    'Implement workload audits, delegate tasks effectively, and set realistic deadlines. Discuss bandwidth openly with your supervisor.',
   'Sub-Scale II':   'Seek clarity on expectations. Schedule regular 1-on-1s to align on priorities and role boundaries.',
@@ -207,12 +191,12 @@ tr:nth-child(even) td{background:#f8fafc}
   'Sub-Scale VIII': 'Invest in one-on-one conversations. Participate in team activities and practice open communication.',
   'Sub-Scale IX':   'Seek stretch assignments, cross-training, or mentoring. Discuss career development with supervisor.',
   'Sub-Scale X':    'Build your professional profile through publications or presentations. Seek formal recognition.',
-  'Sub-Scale XI':   'Report physical discomforts to facilities management. Advocate for ergonomic improvements.',
+  'Sub-Scale XI':   'Take short breaks during work, set clear boundaries on after-hours demands, and discuss workload concerns with your supervisor.',
   'Sub-Scale XII':  'Research market compensation benchmarks. Discuss contributions and growth with HR.',
 } %}
 <div class="card">
   <div class="sec">🎯 Your Personal Top 3 Stress Areas & Recommendations</div>
-  <p style="font-size:.83em;color:#64748b;margin-bottom:13px">Based on <strong>your responses</strong>, these 3 sub-scales scored highest and need your personal attention.</p>
+  <p style="font-size:.83em;color:#64748b;margin-bottom:13px">Based on <strong>your responses</strong>, these are your <strong>3 highest-scoring sub-scales</strong> — regardless of stress level. Even a Moderate score in your top 3 needs attention if it ranks among your highest stressors.</p>
   <div class="concern-grid">
     {% for i in [1,2,3] %}
     {% set sname = stress['top'+i|string+'_subscale'] %}
@@ -220,13 +204,7 @@ tr:nth-child(even) td{background:#f8fafc}
     <div class="cc cc-user">
       <h4>#{{ i }} {{ sname }} — {{ stress['top'+i|string+'_label'] }}</h4>
       <div class="clev">
-        <span class="badge
-          {%- if stress['top'+i|string+'_level']=='Low' %} b-low
-          {%- elif stress['top'+i|string+'_level']=='Moderate' %} b-mod
-          {%- elif stress['top'+i|string+'_level']=='High' %} b-high
-          {%- else %} b-oor{%- endif %}">
-          {{ stress['top'+i|string+'_level'] }}
-        </span>
+        <span class="badge{%- if stress['top'+i|string+'_level']=='Low' %} b-low{%- elif stress['top'+i|string+'_level']=='Moderate' %} b-mod{%- elif stress['top'+i|string+'_level']=='High' %} b-high{%- else %} b-oor{%- endif %}">{{ stress['top'+i|string+'_level'] }}</span>
         &nbsp; Score: {{ stress['top'+i|string+'_score'] }}
       </div>
       <div class="ctip">💡 {{ recs.get(sname, 'Seek professional guidance for this area.') }}</div>
@@ -236,10 +214,10 @@ tr:nth-child(even) td{background:#f8fafc}
   </div>
 </div>
 
-<!-- MODEL TOP 3 — Fixed from trained ML model (shown after personal results) -->
+<!-- MODEL TOP 3 -->
 <div class="card">
-  <div class="sec">🔬 Trained ML Model — Key Stress Concern Areas</div>
-  <p style="font-size:.83em;color:#64748b;margin-bottom:13px">These sub-scales were identified as the <strong>highest stress drivers</strong> from the ML model trained on the dataset. These are <strong>fixed</strong> based on the model's Random Forest feature importances — not your individual score.</p>
+  <div class="sec">🔬 Key Stress Concern Areas</div>
+  <p style="font-size:.83em;color:#64748b;margin-bottom:13px">These sub-scales have been identified as <strong>consistently significant stress drivers</strong> across the study population. Review your scores and apply the recommended strategies.</p>
   <div class="concern-grid">
     {% for mt in model_top3 %}
     {% set ns = namespace(k='', label='', score='', level='') %}
@@ -247,15 +225,64 @@ tr:nth-child(even) td{background:#f8fafc}
     <div class="cc cc-model">
       <h4>{{ mt }} — {{ ns.label }}</h4>
       <div class="clev">
-        <span class="badge {%- if ns.level=='Low' %} b-low{%- elif ns.level=='Moderate' %} b-mod{%- elif ns.level=='High' %} b-high{%- else %} b-oor{%- endif %}">
-          {{ ns.level }} — Score: {{ ns.score }}
-        </span>
+        <span class="badge{%- if ns.level=='Low' %} b-low{%- elif ns.level=='Moderate' %} b-mod{%- elif ns.level=='High' %} b-high{%- else %} b-oor{%- endif %}">{{ ns.level }} — Score: {{ ns.score }}</span>
       </div>
-      <div class="cpin">📌 Consistently high stress driver in the ML training dataset</div>
-      <div class="ctip">{{ ns.label }} — identified through Random Forest feature importance analysis.</div>
+      <div class="cpin">📌 Consistently significant stress area across the study population</div>
+      <div class="ctip">💡 {{ recs.get(mt, 'Identify root causes of stress in this area and seek targeted support or professional guidance.') }}</div>
     </div>
     {% endfor %}
   </div>
+</div>
+
+<!-- FEEDBACK SECTION -->
+<div class="fb-section">
+  <div class="fb-title">💬 Assessment Feedback</div>
+
+  {% if is_previous %}
+    <!-- PREVIOUS VIEW: show saved feedback or "none yet" -->
+    {% if feedback %}
+      <div class="fb-display">
+        <div class="fb-stars">
+          {% for i in range(1,6) %}{% if i <= feedback.rating %}⭐{% else %}☆{% endif %}{% endfor %}
+          &nbsp;<span style="font-size:.8em;color:#64748b">({{ feedback.rating }}/5)</span>
+        </div>
+        <div class="fb-text">"{{ feedback.feedback_text }}"</div>
+        <div class="fb-meta">Submitted on {{ feedback.timestamp }}</div>
+      </div>
+    {% else %}
+      <p class="fb-none">No feedback submitted for this assessment yet.</p>
+    {% endif %}
+
+  {% else %}
+    <!-- RESULT VIEW: show feedback form or submitted feedback -->
+    {% if feedback %}
+      <!-- Already submitted — show it, disable re-entry -->
+      <div class="fb-display" id="fbDisplay">
+        <div class="fb-stars">
+          {% for i in range(1,6) %}{% if i <= feedback.rating %}⭐{% else %}☆{% endif %}{% endfor %}
+          &nbsp;<span style="font-size:.8em;color:#64748b">({{ feedback.rating }}/5)</span>
+        </div>
+        <div class="fb-text">"{{ feedback.feedback_text }}"</div>
+        <div class="fb-meta">Submitted on {{ feedback.timestamp }}</div>
+      </div>
+      <p style="font-size:.8em;color:#94a3b8;margin-top:10px">✅ Feedback submitted. Retake the assessment to submit new feedback.</p>
+    {% else %}
+      <!-- No feedback yet — show form -->
+      <p style="font-size:.85em;color:#64748b;margin-bottom:14px">How helpful was this assessment? Share your thoughts to help us improve.</p>
+      <div class="star-row" id="starRow">
+        <span class="star" data-v="1" onclick="setStar(1)">⭐</span>
+        <span class="star" data-v="2" onclick="setStar(2)">⭐</span>
+        <span class="star" data-v="3" onclick="setStar(3)">⭐</span>
+        <span class="star" data-v="4" onclick="setStar(4)">⭐</span>
+        <span class="star" data-v="5" onclick="setStar(5)">⭐</span>
+        <span style="font-size:.82em;color:#94a3b8;align-self:center;margin-left:8px" id="starLabel">Click to rate</span>
+      </div>
+      <textarea class="fb-ta" id="fbText" placeholder="Share your experience with this OSI assessment tool..."></textarea>
+      <button class="fb-btn" id="fbBtn" onclick="submitFeedback()">📨 Give Feedback</button>
+      <div class="fb-ok" id="fbOk">✅ Thank you! Your feedback has been saved.</div>
+      <div class="fb-err" id="fbErr"></div>
+    {% endif %}
+  {% endif %}
 </div>
 
 <!-- GENERAL RELIEF -->
@@ -273,21 +300,15 @@ tr:nth-child(even) td{background:#f8fafc}
   </div>
 </div>
 
-<!-- IMPORTANT NOTE + HELPLINES -->
+<!-- HELPLINES -->
 <div class="card" style="background:#0f172a;color:#fff">
   <div style="font-size:1em;font-weight:700;margin-bottom:10px">⚠️ Important Note &amp; Professional Support</div>
-  <p style="font-size:.86em;line-height:1.78;margin-bottom:14px">
-    This assessment is based on the <strong>Occupational Stress Index (OSI)</strong> normative ranges by Srivastava &amp; Singh (1981).
-    It is a <strong>research-based screening tool</strong> and is <strong>not a substitute for professional medical or psychological advice</strong>.
-    If you are experiencing persistent stress, anxiety, or feel unable to cope — please reach out to a qualified mental health professional.
-    <strong>You are not alone. Help is always available.</strong>
-  </p>
+  <p style="font-size:.86em;line-height:1.78;margin-bottom:14px">This assessment is based on the <strong>OSI</strong> normative ranges by Srivastava &amp; Singh (1981). It is a <strong>research-based screening tool</strong> and is <strong>not a substitute for professional medical or psychological advice</strong>. If you experience persistent stress or feel unable to cope — please reach out to a qualified mental health professional.</p>
   <div style="font-size:.86em;font-weight:700;color:#93c5fd;margin-bottom:9px">📞 Professional Support Helplines (India)</div>
-  <div class="hl">📞 <div><strong>iCall — TISS</strong><br><a href="https://icallhelpline.org/" target="_blank">icallhelpline.org</a> &nbsp;|&nbsp; 9152987821</div></div>
-  <div class="hl">📞 <div><strong>MindScaping</strong><br><a href="https://mindscaping.in" target="_blank">mindscapin.in</a> &nbsp;|&nbsp; 9152987821</div></div>
-  <div class="hl">📞 <div><strong>Vandrevala Foundation</strong><br><a href="https://www.vandrevalafoundation.com/" target="_blank">vandrevalafoundation.com</a> &nbsp;|&nbsp; 1860-2662-345</div></div>
-  <div class="hl">📞 <div><strong>NIMHANS Helpline</strong><br><a href="https://nimhans.ac.in/" target="_blank">nimhans.ac.in</a> &nbsp;|&nbsp; 080-46110007</div></div>
-  <p style="font-size:.78em;color:#64748b;margin-top:10px">International: <a href="https://www.who.int/health-topics/mental-health" style="color:#93c5fd" target="_blank">WHO Mental Health Resources</a></p>
+  <div class="hl"><span style="font-size:1.1em">📞</span><div><strong style="color:#fff">iCall — TISS</strong>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="https://icallhelpline.org/" target="_blank" style="color:#93c5fd">icallhelpline.org</a> </div></div>
+  <div class="hl"><span style="font-size:1.1em">📞</span><div><strong style="color:#fff">MindScaping</strong>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="https://mindscaping.in" target="_blank" style="color:#93c5fd">mindscaping.in</a> </div></div>
+  <div class="hl"><span style="font-size:1.1em">📞</span><div><strong style="color:#fff">Vandrevala Foundation</strong>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="https://www.vandrevalafoundation.com/" target="_blank" style="color:#93c5fd">vandrevalafoundation.com</a></div></div>
+  <div class="hl"><span style="font-size:1.1em">📞</span><div><strong style="color:#fff">NIMHANS Helpline</strong>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="https://nimhans.ac.in/" target="_blank" style="color:#93c5fd">nimhans.ac.in</a> </div></div>
 </div>
 
 </div><!-- end wrap -->
@@ -295,12 +316,9 @@ tr:nth-child(even) td{background:#f8fafc}
 <!-- CHATBOT -->
 <div id="chatbot">
   <div id="chat-box">
-    <div id="chat-hdr">
-      💬 OSI Stress Assistant
-      <button class="close" onclick="toggleChat()">✕</button>
-    </div>
+    <div id="chat-hdr">💬 OSI Stress Assistant<button class="close" onclick="toggleChat()">✕</button></div>
     <div id="chat-msgs">
-      <div class="msg bot">👋 Hi! I'm your Smart Assistant for OSI Stress. I can answer questions about occupational stress, your scores, coping strategies, and the OSI framework. What would you like to know?</div>
+      <div class="msg bot">👋 Hi! I'm your OSI Stress Assistant. Ask me about your scores, subscales, burnout, coping strategies, or helplines!</div>
     </div>
     <div id="chat-inp-row">
       <input id="chat-inp" placeholder="Ask about stress, scores, tips..." onkeydown="if(event.key==='Enter')sendChat()">
@@ -311,42 +329,82 @@ tr:nth-child(even) td{background:#f8fafc}
 </div>
 
 <script>
-// ── Needle animation ──────────────────────────────────────────────────────
-var score = parseInt("{{ stress.total_score }}") || 100;
-var pct   = (Math.min(Math.max(score, 46), 230) - 46) / (230 - 46);
-var angle = -90 + pct * 180;   // -90 = full left (Low), +90 = full right (High)
-document.getElementById('needle').setAttribute('transform', 'rotate('+angle+' 180 178)');
+// Needle
+var score=parseInt("{{ stress.total_score }}")||100;
+var pct=(Math.min(Math.max(score,46),230)-46)/(230-46);
+var angle=-90+pct*180;
+document.getElementById('needle').setAttribute('transform','rotate('+angle+' 180 178)');
 
-// ── Chatbot ───────────────────────────────────────────────────────────────
-function toggleChat() {
-  var box = document.getElementById('chat-box');
-  var open = box.style.display === 'flex';
-  box.style.display = open ? 'none' : 'flex';
-  if (!open) document.getElementById('chat-inp').focus();
+// Star rating
+var selRating=0;
+var starLabels=['','Poor','Fair','Good','Very Good','Excellent'];
+function setStar(v){
+  selRating=v;
+  var stars=document.querySelectorAll('.star');
+  stars.forEach(function(s,i){
+    if(i<v){s.classList.add('sel');s.style.filter='none';s.style.opacity='1';}
+    else{s.classList.remove('sel');s.style.filter='grayscale(1)';s.style.opacity='.35';}
+  });
+  var lbl=document.getElementById('starLabel');
+  if(lbl)lbl.textContent=starLabels[v]||'';
 }
 
-function sendChat() {
-  var inp = document.getElementById('chat-inp');
-  var msg = inp.value.trim();
-  if (!msg) return;
-  addMsg(msg, 'user');
-  inp.value = '';
-  fetch('/chat', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({message: msg})
-  }).then(function(r) { return r.json(); })
-    .then(function(d) { addMsg(d.reply, 'bot'); })
-    .catch(function()  { addMsg('Sorry, I could not connect. Please try again.', 'bot'); });
+// Feedback submit
+function submitFeedback(){
+  var btn=document.getElementById('fbBtn');
+  var ta=document.getElementById('fbText');
+  var ok=document.getElementById('fbOk');
+  var er=document.getElementById('fbErr');
+  ok.style.display='none';er.style.display='none';
+  var txt=(ta?ta.value.trim():'');
+  if(!txt){er.textContent='Please write your feedback before submitting.';er.style.display='block';return;}
+  btn.disabled=true;btn.textContent='Submitting...';
+  fetch('/save_feedback',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({feedback_text:txt,rating:selRating||null})
+  }).then(function(r){return r.json();})
+  .then(function(d){
+    if(d.ok){
+      ok.style.display='block';
+      btn.textContent='✅ Feedback Submitted';
+      // Show the submitted feedback inline
+      var stars='';
+      for(var i=1;i<=5;i++)stars+=i<=(selRating||0)?'⭐':'☆';
+      var display='<div class="fb-display" style="margin-top:12px"><div class="fb-stars">'+stars+'</div><div class="fb-text">"'+txt.replace(/</g,'&lt;')+'</div><div class="fb-meta">Just now</div></div>';
+      ok.innerHTML='✅ Thank you! Your feedback has been saved.<br><br>'+display;
+      if(ta)ta.style.display='none';
+      var sr=document.getElementById('starRow');if(sr)sr.style.display='none';
+    }else{
+      er.textContent='Error: '+(d.msg||'Could not save feedback.');er.style.display='block';
+      btn.disabled=false;btn.textContent='📨 Give Feedback';
+    }
+  }).catch(function(){
+    er.textContent='Connection error. Please try again.';er.style.display='block';
+    btn.disabled=false;btn.textContent='📨 Give Feedback';
+  });
 }
 
-function addMsg(text, who) {
-  var msgs = document.getElementById('chat-msgs');
-  var div  = document.createElement('div');
-  div.className = 'msg ' + who;
-  div.textContent = text;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
+// Chatbot
+function toggleChat(){
+  var box=document.getElementById('chat-box');
+  var open=box.style.display==='flex';
+  box.style.display=open?'none':'flex';
+  if(!open)document.getElementById('chat-inp').focus();
+}
+function sendChat(){
+  var inp=document.getElementById('chat-inp');
+  var msg=inp.value.trim();if(!msg)return;
+  addMsg(msg,'user');inp.value='';
+  fetch('/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg})})
+    .then(function(r){return r.json();})
+    .then(function(d){addMsg(d.reply,'bot');})
+    .catch(function(){addMsg('Sorry, could not connect. Please try again.','bot');});
+}
+function addMsg(text,who){
+  var msgs=document.getElementById('chat-msgs');
+  var div=document.createElement('div');div.className='msg '+who;div.textContent=text;
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
 }
 </script>
 </body></html>
